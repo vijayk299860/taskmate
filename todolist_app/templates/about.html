@@ -1,11 +1,61 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>AboutUs</title>
+    <title>About TaskMate</title>
 {% endblock title %}
 
 {% block content %}
 <div class='container'>
-    <h1>{{about_text}}</h1>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">About TaskMate</h1>
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Our Mission</h3>
+                    <p class="card-text">TaskMate was created with a simple mission: to help people organize their lives better. We believe that productivity shouldn't be complicated, and that everyone deserves tools that make daily task management effortless.</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Our Story</h3>
+                    <p class="card-text">TaskMate began as a personal project to solve the everyday challenge of keeping track of tasks and responsibilities. What started as a simple to-do list quickly evolved into a comprehensive task management solution designed to help users stay organized and focused on what matters most.</p>
+                    <p class="card-text">Built with Django and modern web technologies, TaskMate combines powerful functionality with an intuitive interface, making task management accessible to everyone regardless of technical expertise.</p>
+                </div>
+            </div>
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Key Features</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Simple and intuitive task creation</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Task status tracking</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Secure user accounts</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Mobile-friendly design</li>
+                        <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Clean, distraction-free interface</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Meet the Developer</h3>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center" style="width: 150px; height: 150px;">
+                                <i class="bi bi-person-circle" style="font-size: 100px;"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4>Vijay Kumar</h4>
+                            <p class="card-text">Full-stack developer passionate about creating useful applications that solve real-world problems. TaskMate represents my commitment to clean code, user-friendly design, and practical functionality.</p>
+                            <p class="card-text">I'm constantly working to improve TaskMate based on user feedback and emerging best practices in web development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

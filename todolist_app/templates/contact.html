@@ -1,11 +1,88 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>ContatUs</title>
+    <title>Contact Us</title>
 {% endblock title %}
 
 {% block content %}
 <div class='container'>
-    <h1>{{contact_text}}</h1>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-4">Contact Us</h1>
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Get in Touch</h3>
+                    <p class="card-text">Have questions, suggestions, or feedback about TaskMate? We'd love to hear from you! Use any of the methods below to reach out, and we'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-envelope-fill text-primary" style="font-size: 3rem;"></i>
+                            <h4 class="mt-3">Email Us</h4>
+                            <p>For support or general inquiries:</p>
+                            <a href="mailto:vijayk299860@gmail.com" class="btn btn-outline-primary">vijayk299860@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-github text-dark" style="font-size: 3rem;"></i>
+                            <h4 class="mt-3">GitHub</h4>
+                            <p>Check out the project repository:</p>
+                            <a href="https://github.com/vijayk299860/taskmate" target="_blank" class="btn btn-outline-dark">TaskMate on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Enter message subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-text mt-2">
+                            <i class="bi bi-info-circle"></i> This form is currently for demonstration purposes. Please use the email address above to contact us directly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p>Follow us on social media:</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="text-decoration-none">
+                        <i class="bi bi-twitter text-primary" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                        <i class="bi bi-linkedin text-primary" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                        <i class="bi bi-facebook text-primary" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}
