@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title>TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+<div class="hero-section" style="background-image: url('{% static 'img/stickynotes_3.jpg' %}'); background-size: cover; background-position: center; min-height: 400px; position: relative;">
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+    <div class="container position-relative" style="z-index: 1; padding-top: 100px; padding-bottom: 100px;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 text-white mb-4">Organize Your Tasks Efficiently</h1>
+                <p class="lead text-white">Keep track of all your tasks in one place with TaskMate</p>
+                    <a href="{% url 'todolist' %}" class="btn btn-outline-teal mt-3">
+                                        Let's Get Started
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <!-- First row with image left, text right -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <div class="image-container position-relative overflow-hidden" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="{% static 'img/sticky_notes.jpg' %}" alt="notes" class="img-fluid w-100" style="transition: transform 0.3s ease;">
+                <div class="image-overlay position-absolute d-flex align-items-center justify-content-center" style="top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 class="text-white">Plan Your Day</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-4 text-danger">Smart Planning Made Simple</h2>
+            <p class="lead">TaskMate helps you organize your day with intuitive task management. Create, prioritize, and schedule your tasks with ease.</p>
+            <p>Our simple interface makes planning your day a breeze. No more forgotten tasks or missed deadlines!</p>
+            <div class="mt-3">
+                <span class="badge bg-info me-2">Easy to Use</span>
+                <span class="badge bg-success me-2">Time-Saving</span>
+                <span class="badge bg-warning">Productive</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Second row with text left, image right -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+        <div class="col-md-6">
+            <div class="image-container position-relative overflow-hidden" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="{% static 'img/sticknotes_2.jpg' %}" alt="notes" class="img-fluid w-100" style="transition: transform 0.3s ease;">
+                <div class="image-overlay position-absolute d-flex align-items-center justify-content-center" style="top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 class="text-white">Track Your Progress</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-4 text-success">Monitor Your Achievements</h2>
+            <p class="lead">Watch your productivity soar as you complete tasks and track your progress over time.</p>
+            <p>TaskMate gives you the satisfaction of checking off completed items and seeing your accomplishments add up day by day.</p>
+            <div class="mt-3">
+                <span class="badge bg-primary me-2">Progress Tracking</span>
+                <span class="badge bg-danger me-2">Goal Setting</span>
+                <span class="badge bg-dark">Achievement</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Third row with image left, text right -->
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="image-container position-relative overflow-hidden" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <img src="{% static 'img/sample_1.jpg' %}" alt="notes" class="img-fluid w-100" style="transition: transform 0.3s ease;">
+                <div class="image-overlay position-absolute d-flex align-items-center justify-content-center" style="top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s ease;">
+                    <h3 class="text-white">Stay Organized</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-4 text-warning">Never Miss a Deadline Again</h2>
+            <p class="lead">Keep all your important tasks in one place and access them anytime, anywhere.</p>
+            <p>TaskMate helps you prioritize what matters most, ensuring you stay on top of your responsibilities and meet every deadline with confidence.</p>
+            <div class="mt-3">
+                <span class="badge bg-secondary me-2">Organization</span>
+                <span class="badge bg-info me-2">Accessibility</span>
+                <span class="badge bg-success">Reliability</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .image-container:hover img {
+        transform: scale(1.05);
+    }
+    
+    .image-container:hover .image-overlay {
+        opacity: 1;
+    }
+    
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    h2 {
+        font-weight: 600;
+    }
+    
+    .lead {
+        font-size: 1.15rem;
+    }
+
+
+/* Option 2: Outline button */
+.btn-outline-teal {
+    background-color: transparent;
+    color: #20c997;
+    border: 2px solid #20c997;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+
+.btn-outline-teal:hover {
+    background-color: #acd3d1;
+    color: white;
+    box-shadow: 0 5px 15px rgba(32, 201, 151, 0.4);
+}
+
+</style>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Login - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card mt-5">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Login for TaskMate</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-4 px-4">Login</button>
+                    </div>
+                </form>
+                <hr>
+                <div class="text-center">
+                    Wanna Register? <a href="{% url 'register' %}">Register here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

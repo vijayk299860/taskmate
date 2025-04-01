@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Register - TaskMate</title>
+{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card mt-5">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Register for TaskMate</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ register_form|crispy }}
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Register</button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    Already have an account? <a href="{% url 'login' %}">Login here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
