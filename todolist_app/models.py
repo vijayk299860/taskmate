@@ -11,5 +11,3 @@ class TaskList(models.Model):
     def __str__(self):
         return self.task
     
-    class Meta:
-        ordering = ['id', ]
