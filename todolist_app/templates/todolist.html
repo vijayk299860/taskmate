@@ -42,12 +42,22 @@
                 {% for task in all_tasks %}
                 <tr {% if task.status %}class="table-success"{% endif %}>
                     <td>{{ task.task }}</td>
-                    <td>{% if task.status %}Completed{% else %}Yet To Complete{% endif %}</td>
                     {% if request.user.is_superuser %}
-                    <td>{{task.user}}</td>
+                    <td>{{ task.user }}</td>
                     {% endif %}
-                    <td class="text-center"><a href="{% url 'edit-task' task.id %}" class="btn btn-primary">Modify</a></td>
-                    <td class="text-center"><a href="{% url 'delete-task' task.id %}" class="btn btn-danger">Delete</a></td>
+                    <td>{% if task.status %}Completed{% else %}Yet To Complete{% endif %}</td>
+                    <td class="text-center">
+                        <a href="{% url 'edit-task' task.id %}" class="btn btn-primary btn-sm">Modify</a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{% url 'delete-task' task.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="{% if request.user.is_superuser %}5{% else %}4{% endif %}" class="text-center text-muted">
+                        No tasks available.
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
