@@ -18,7 +18,8 @@ def todolist(request):
             return redirect('todolist')
     else:
         form = TaskForm()
-        
+    if request.user.is_superuser:
+        all_tasks = TaskList.objects.all()
     all_tasks = TaskList.objects.filter(user=request.user)
     paginator = Paginator(all_tasks, 10)
     page_number = request.GET.get('page')

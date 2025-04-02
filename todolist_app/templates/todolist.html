@@ -29,6 +29,9 @@
             <thead class="bg-dark text-white">
                 <tr>
                     <th scope="col" style="width: 60%;">Task</th>
+                    {% if request.user.is_superuser %}
+                    <th scope="col" style="width: 12.5%;">User</th>
+                    {% endif %}
                     <th scope="col" style="width: 15%;">Status</th>
                     <th scope="col" style="width: 12.5%;">Modify</th>
                     <th scope="col" style="width: 12.5%;">Discard</th>
@@ -40,6 +43,9 @@
                 <tr {% if task.status %}class="table-success"{% endif %}>
                     <td>{{ task.task }}</td>
                     <td>{% if task.status %}Completed{% else %}Yet To Complete{% endif %}</td>
+                    {% if request.user.is_superuser %}
+                    <td>{{task.user}}</td>
+                    {% endif %}
                     <td class="text-center"><a href="{% url 'edit-task' task.id %}" class="btn btn-primary">Modify</a></td>
                     <td class="text-center"><a href="{% url 'delete-task' task.id %}" class="btn btn-danger">Delete</a></td>
                 </tr>
